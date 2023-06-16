@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+  }
+.searchButton {
+background-color: #5D78FF;
+border-radius: 6.18px;
+}
+.custom-input {
+  width: 50px;
+}
+
+
+.left-align {
+  margin-right: auto;
+}
+
+.right-align {
+  margin-left: auto;
+}
+.container {
+  display: flex;
+}
+.main-container{
+  width: 100vw;
+  height: 100vh;
+}
+
+
