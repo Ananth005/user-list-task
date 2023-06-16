@@ -98,7 +98,7 @@ export class UserServiceService {
     //     }
     //   );
     // // console.log(element.id);
-    alert("the user " + element.name + " has been deleted from the table")
+    // alert("the user " + element.name + " has been deleted from the table")
     const id=element.id
     const index = this.users.findIndex(obj => obj.id === id);
     if (index !== -1) {
@@ -107,11 +107,12 @@ export class UserServiceService {
 
 
     }
-    console.log(this.users);
+    // console.log(this.users);
     return this.users
 
   }
-  editUser(newUser: any) {
+  editUser(edituser: any) {
+    this.addUser(edituser);
     // const url = 'https://gorest.co.in/public/v2/users/' + element.id;
     // this.http.put(url, element)
     //   .subscribe(
@@ -128,7 +129,19 @@ export class UserServiceService {
     // console.log(url);
     // alert("you can edit the details of the user " + element.name)
     
-    this.users.push(newUser.value);
+    // this.users.push(edituser.value);
+    // console.log(edituser.value)
+    // const id=element.id
+    // const index = this.users.findIndex(obj => obj.id === id);
+    // if (index !== -1) {
+    //   this.users = this.users.filter(obj => obj.id !== id);
+
+
+
+    // }
+    
+
+    // console.log( this.users)
  }
  show(){
   // console.log(this.users)
@@ -136,6 +149,6 @@ export class UserServiceService {
  }
  addUser(addUser: any) {
   this.users.push(addUser.value);
-  console.log(this.users)
+  // console.log(this.users)
 }
 }

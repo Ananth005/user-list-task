@@ -12,7 +12,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import {MatCardModule} from '@angular/material/card';
-import { SignInComponent } from './sign-in/sign-in.component';
 import { UserServiceService } from './user-service.service';
 import { FormsModule } from '@angular/forms';
 
@@ -23,7 +22,6 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     UserListComponent,
     EditUserComponent,
-    SignInComponent
   ],
   imports: [
     BrowserModule,

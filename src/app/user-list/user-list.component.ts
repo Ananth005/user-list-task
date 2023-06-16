@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { UserServiceService } from '../user-service.service';
 import { NgModule } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { elementAt } from 'rxjs';
 
 
 
@@ -17,7 +18,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class UserListComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = [ 'name','gender','email','status', 'actions'];
-  id!: number;
+  editable:boolean = false;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   selectedUser: any;
   view: boolean=false;
@@ -29,6 +30,7 @@ export class UserListComponent implements OnInit {
     status: ''
   };
  addUser:any=[];
+ 
 
 
   constructor(private http: HttpClient,private userservice: UserServiceService) {}
@@ -62,7 +64,9 @@ export class UserListComponent implements OnInit {
     
     this.newUser=element;
     // this.userservice.DeleteUser(element);
-    this.userservice.editUser(this.newUser);
+    // this.DeleteUser(element)
+    // this.userservice.editUser(this.newUser);
+    
   }
   viewUser(element:any){
     this.selectedUser = element;
@@ -74,12 +78,17 @@ export class UserListComponent implements OnInit {
   
   onsubmit(addUser:NgForm) {
     // console.log(addUser)
-    // console.log(this.addUser)
     this.userservice.addUser(addUser);
     
     this.getData();
   }
   
-  
+  edit(edituser:NgForm){
+    this.userservice.DeleteUser(this.newUser);
+    this.userservice.editUser(edituser);
+   
+    // console.log(edituser)
+    this.getData();
+  }
 
 }
